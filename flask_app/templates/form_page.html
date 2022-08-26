@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/login_reg.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- nav bar -->
+    <div class="header">
+        <a href="/quote/login" class="login">Log In</a>
+        <a href="/logout" class="login">Log Out</a>
+    </div>
+
+    <div class="container">
+        <!-- quote -->
+        <div class="quote">
+            <div id="quoteResult"></div>
+        </div>
+
+        <!-- register -->
+        <div class="left">
+            <h1 class="h1">Welcome</h1>
+            <form action="/register" method="post">
+                <div>
+                    <label for="first_name">First Name:</label>
+                </div>
+                <input type="text" name="first_name">
+                <div id="flash">
+                    {% for message in get_flashed_messages(category_filter=["err_first"]) %}
+                    <!-- validator -->
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="last_name">Last Name:</label>
+                </div>
+                <input type="text" name="last_name">
+                <div id="flash">
+                    {% for message in get_flashed_messages(category_filter=["err_last"]) %}
+                    <!-- validator -->
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                </div>
+                <input type="text" name="email">
+                <div id="flash">
+                    {% for message in get_flashed_messages(category_filter=["err_email"]) %}
+                    <!-- validator -->
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                    {% for message in get_flashed_messages(category_filter=["err_taken"]) %}
+                    <!-- validator -->
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="password">Password:</label>
+                </div>
+                <input type="password" name="password">
+                <div id="flash">
+                    {% for message in get_flashed_messages(category_filter=["err_pass"]) %}
+                    <!-- validator -->
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="confirm_password">Confirm Password:</label>
+                </div>
+                <input type="password" name="confirm_password">
+                <div id="flash">
+                    {% for message in get_flashed_messages(category_filter=["err_match"]) %}
+                    <!-- validator -->
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- login -->
+        <div class="right">
+            <h1 class="h1">Welcome back</h1>
+            <form action="/login" method="post">
+                <div>
+                    <label for="email">Email:</label>
+                </div>
+                <input type="text" name="email">
+                <div id="flash">
+                    {% for message in get_flashed_messages(category_filter=['login']) %}
+                    <!-- validator -->
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="password">Password:</label>
+                </div>
+                <input type="password" name="password">
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

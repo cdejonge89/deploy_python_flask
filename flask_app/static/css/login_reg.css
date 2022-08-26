@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: blanchedalmond;
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    height: 500px;
+    width: 80%;
+}
+
+.container {
+    background-image: url("https://brighterworld.mcmaster.ca/wp-content/uploads/sites/2/2022/03/Water_Still.jpg");
+    width: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote {
+    /* border: 2px solid white; */
+    /* height: 408px; */
+    width: 36%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.left {
+    /* border: 2px solid black; */
+    height: 50%;
+    width: 28%;
+    text-align: left;
+    background-color: rgba(242, 242, 242, .5);
+    padding: 15px;
+    margin-right: 10px;
+}
+
+
+.right {
+    /* border: 2px solid black; */
+    height: 50%;
+    width: 28%;
+    text-align: left;
+    background-color: rgba(242, 242, 242, .5);
+    padding: 15px;
+}
+
+/* LOGIN DESIGN */
+.header {
+    /* border: 2px solid black; */
+    margin: 10px 10px;
+    height: 25px;
+    text-align: right;
+}
+
+.login {
+    /* border: 2px solid black; */
+    padding: 5px;
+    background-color: #4E937A;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.login:hover {
+    background-color: white;
+    color: #4E937A;
+}
+
+.login span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+/* MESSAGE DESIGN */
+.h1 {
+    text-decoration: none;
+    text-shadow: 1px 1px 3px white;
+    color:#484A47;
+    font-family: 'Roboto', sans-serif;
+    transition-duration: 0.4s;
+    transition: color 1s;
+}
+
+.h1:hover {
+    color: #9CEC5B;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid black;  
+}
+
+input[type=text], [type=password] {
+    background-color: rgba(242, 242, 242, .5);
+    color: black;
+}
+
+label {
+    color: #484A47;
+    /* text-shadow: 2px 2px white; */
+}
+
+button {
+    padding: 5px;
+    background-color: #68534D;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: white;
+    color: #68534D;
+}
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+/* Error flash message */
+#flash {
+    background-color: #9CEC5B;
+    font-size: small;
+    text-align: center;
+}
